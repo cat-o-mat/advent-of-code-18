@@ -3,6 +3,8 @@ package com.cat.o.mat.day_two;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -15,8 +17,6 @@ public class Task_II {
         readInput();
 
         Long result = inputIds.stream()
-                // filter out all without duplicate chars
-                .filter(Task_II::hasDuplicateChars)
                 // count chars in strings
                 .map(s -> s.chars()
                         .boxed()
@@ -32,7 +32,6 @@ public class Task_II {
                 .values().stream()
                 .reduce(Math::multiplyExact)
                 .orElse(0L);
-
         System.out.println(result);
     }
 
@@ -42,14 +41,6 @@ public class Task_II {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    private static boolean hasDuplicateChars(String s) {
-        Set<Character> chars = new HashSet<>();
-        for (char c : s.toCharArray()) {
-            if (!chars.add(c)) return true;
-        }
-        return false;
     }
 
 }
