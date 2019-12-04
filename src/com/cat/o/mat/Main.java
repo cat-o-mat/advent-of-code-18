@@ -12,5 +12,6 @@ public class Main {
 
         Task_II day_two = new Task_II();
         day_two.countOccurns();
+        day_two.findId();
     }
 }

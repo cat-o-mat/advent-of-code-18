@@ -19,6 +19,7 @@ public class Task_I {
                 .sum();
 
         System.out.println("Resulting frequency after all of the changes in frequency have been applied: " + sum);
+        System.out.println("Correct answer: 574");
     }
 
     public void findRepeatingFreq() {
@@ -34,6 +35,7 @@ public class Task_I {
         for (int idx = 0; idx < inputFreq.size(); idx++) {
             if (!foundFreq.add(sum)) {
                 System.out.println("First repeating frequency: " + sum);
+                System.out.println("Correct answer: 452");
                 return;
             }
             sum += ints[idx];
